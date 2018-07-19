@@ -9,12 +9,7 @@ public class BinarySearchImpl {
 	@Autowired
 	private SortAlgorithm sortAlgorithm;
 
-	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-		super();
-		this.sortAlgorithm = sortAlgorithm;
-	}
-
-	public int binarySearch(int[] numbers, int numberToSearchFor) {
+    public int binarySearch(int[] numbers, int numberToSearchFor) {
 		// Sorting an array
 		System.out.println(sortAlgorithm);
 		int[] sorted = sortAlgorithm.sort(numbers);
