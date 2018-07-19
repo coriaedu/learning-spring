@@ -3,7 +3,6 @@ package com.coriaedu.spring.basics.springin5steps;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class SpringIn5StepsApplication {
@@ -23,6 +22,12 @@ public class SpringIn5StepsApplication {
 		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsApplication.class, args);
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+
+        // getting a bean again from the context will return a new instance or the same one, depending on the Bean Scope (singleton / prototype)
+        BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+
+        System.out.println(binarySearch);
+        System.out.println(binarySearch1);
 
 		int result = binarySearch.binarySearch(new int[] {12, 4, 6}, 3);
 
