@@ -1,4 +1,4 @@
-package com.coriaedu.spring.basics.springin5steps;
+package com.coriaedu.spring.basics.springin5steps.basic;
 
 public interface SortAlgorithm {
 

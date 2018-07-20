@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.coriaedu.spring.basics.springin5steps.basic.BinarySearchImpl;
+
 @SpringBootApplication
-public class SpringIn5StepsApplication {
+public class SpringIn5StepsBasicApplication {
 
 	// What are the beans?
 	// Through the @Component annotation, we tell Spring which are the beans we want it to manage.
@@ -19,7 +21,7 @@ public class SpringIn5StepsApplication {
 	public static void main(String[] args) {
 
 		// Spring Application Context will manage all the beans:
-		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsApplication.class, args);
+		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 
