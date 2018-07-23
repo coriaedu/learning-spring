@@ -1,27 +1,32 @@
 package com.coriaedu.spring.basics.springin5steps;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.coriaedu.spring.basics.springin5steps.basic.BinarySearchImpl;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan("") // current package
 public class SpringIn5StepsBasicApplication {
 
 	// What are the beans?
 	// Through the @Component annotation, we tell Spring which are the beans we want it to manage.
+    // If we are not using Spring Boot, we can use just Spring and use the @Configuration and @ComponentScan annotations.
 
 	// What are the dependencies of a bean?
-	// We use @Autowired on the depencies within a bean.
+    // We use @Autowired on the dependencies within a bean.
 
 	// Where to search for beans?
 	// Spring Boot will scan the component packages through the @SpringBootApplication annotated class' package and sub packages.
+    // If using just Spring, @ComponentScan("") is used.
 
 	public static void main(String[] args) {
 
 		// Spring Application Context will manage all the beans:
-		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+                SpringIn5StepsBasicApplication.class);
 
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 
