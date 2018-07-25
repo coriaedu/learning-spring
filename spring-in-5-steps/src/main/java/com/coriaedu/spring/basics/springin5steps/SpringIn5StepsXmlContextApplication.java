@@ -1,5 +1,7 @@
 package com.coriaedu.spring.basics.springin5steps;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.coriaedu.spring.basics.springin5steps.xml.XmlPersonDAO;
@@ -19,6 +21,8 @@ public class SpringIn5StepsXmlContextApplication {
     // Spring Boot will scan the component packages through the @SpringBootApplication annotated class' package and sub packages.
     // If using just Spring, @ComponentScan("") is used.
 
+    private static Logger logger = LoggerFactory.getLogger(SpringIn5StepsXmlContextApplication.class);
+
     public static void main(String[] args) {
 
         // Spring Application Context will manage all the beans:
@@ -27,8 +31,7 @@ public class SpringIn5StepsXmlContextApplication {
 
             XmlPersonDAO person = applicationContext.getBean(XmlPersonDAO.class);
 
-            System.out.println(person);
-            System.out.println(person.getXmlJdbcConnection());
+            logger.info("Person: {} - Connection: {}", person, person.getXmlJdbcConnection());
 
         }
     }
