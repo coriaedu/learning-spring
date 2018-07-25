@@ -29,6 +29,9 @@ public class SpringIn5StepsXmlContextApplication {
         try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
                 "applicationContext.xml")) { // no need to provide path as this is in the Classpath (main/resources)
 
+            // what are all the beans loaded?
+            logger.info("Beans Loaded -> {}", (Object) applicationContext.getBeanDefinitionNames());
+
             XmlPersonDAO person = applicationContext.getBean(XmlPersonDAO.class);
 
             logger.info("Person: {} - Connection: {}", person, person.getXmlJdbcConnection());

@@ -2,7 +2,7 @@ package com.coriaedu.spring.basics.springin5steps.basic;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class QuickSortAlgorithm implements SortAlgorithm {
 
 	@Override
