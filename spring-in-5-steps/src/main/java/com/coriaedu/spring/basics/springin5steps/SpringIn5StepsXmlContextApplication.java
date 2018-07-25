@@ -1,13 +1,9 @@
 package com.coriaedu.spring.basics.springin5steps;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.coriaedu.spring.basics.springin5steps.xml.XmlPersonDAO;
 
-@Configuration
-@ComponentScan("") // current package
 public class SpringIn5StepsXmlContextApplication {
 
     // What are the beans?
