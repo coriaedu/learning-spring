@@ -6,7 +6,7 @@ class MyMathTest {
 
     @Test
     void test() {
-        // Absence of result is success
+        // Absence of failure is success
     }
 
 }
