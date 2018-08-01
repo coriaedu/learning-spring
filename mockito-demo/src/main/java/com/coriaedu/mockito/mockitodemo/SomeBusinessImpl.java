@@ -15,7 +15,3 @@ public class SomeBusinessImpl {
         return optMax.orElse(Integer.MIN_VALUE);
     }
 }
-
-interface DataService {
-    int[] retrieveAllData();
-}
