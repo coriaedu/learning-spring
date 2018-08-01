@@ -4,11 +4,16 @@ import java.util.Arrays;
 import java.util.OptionalInt;
 
 public class SomeBusinessImpl {
-    private DataService dataservice;
+    private DataService dataService;
+
+    public SomeBusinessImpl(DataService dataService) {
+        super();
+        this.dataService = dataService;
+    }
 
     int findTheGreatestFromAllData() {
 
-        int[] data = dataservice.retrieveAllData();
+        int[] data = dataService.retrieveAllData();
 
         OptionalInt optMax = Arrays.stream(data).max();
 
