@@ -13,6 +13,10 @@ public class Business1 {
 
     public String calculateSomething() {
         // Business Logic
-        return dao.retrieveSomething();
+        try {
+            return dao.retrieveSomething();
+        } catch (Exception e) {
+            return ("EXCEPTION: " + e.getMessage());
+        }
     }
 }
