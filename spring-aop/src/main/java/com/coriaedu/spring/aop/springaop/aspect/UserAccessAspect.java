@@ -17,7 +17,7 @@ public class UserAccessAspect {
     // execution( * PACKAGE.*.*(..))
     // Weaving: Process where this whole things get weaved around our code is called Weaving.
     // Weaver: Framework that does weaving.
-    @Before("execution(* com.coriaedu.spring.aop.springaop.data.*.*(..))") // This expression is called a Pointcut (what we want to intercept)
+    @Before("com.coriaedu.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()") // This expression is called a Pointcut (what we want to intercept)
     public void before(JoinPoint joinPoint) { // A JoinPoint is specific interception of a method call.
         // What to do: This is called the Advice
         log.info("Check for user access");

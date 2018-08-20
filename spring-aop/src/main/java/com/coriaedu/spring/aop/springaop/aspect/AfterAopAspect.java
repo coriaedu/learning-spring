@@ -19,20 +19,20 @@ public class AfterAopAspect {
     // Weaving: Process where this whole things get weaved around our code is called Weaving.
     // Weaver: Framework that does weaving.
     @AfterReturning(
-            value = "execution(* com.coriaedu.spring.aop.springaop..*.*(..))",
+            value = "com.coriaedu.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
             returning = "result") // This expression is called a Pointcut (what we want to intercept)
     public void afterReturning(JoinPoint joinPoint, Object result) { // A JoinPoint is specific interception of a method call.
         // What to do: This is called the Advice
         log.info(" {} returned with value {}", joinPoint, result);
     }
 
-    @AfterThrowing(value = "execution(* com.coriaedu.spring.aop.springaop..*.*(..))",
+    @AfterThrowing(value = "com.coriaedu.spring.aop.springaop.aspect.CommonJoinPointConfig.allLayersExecution()",
             throwing = "exception")
     public void afterThrowing(JoinPoint jp, Object exception) {
         log.info(" {} threw {}", jp, ((Throwable) exception).getMessage());
     }
 
-    @AfterThrowing(value = "execution(* com.coriaedu.spring.aop.springaop..*.*(..))")
+    @AfterThrowing(value = "com.coriaedu.spring.aop.springaop.aspect.CommonJoinPointConfig.allLayersExecution()")
     public void after(JoinPoint jp) {
         log.info(" After execution of {}", jp);
     }

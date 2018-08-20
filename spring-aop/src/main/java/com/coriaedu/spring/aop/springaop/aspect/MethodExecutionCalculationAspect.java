@@ -13,7 +13,7 @@ public class MethodExecutionCalculationAspect {
 
     private static final Logger log = LoggerFactory.getLogger(MethodExecutionCalculationAspect.class);
 
-    @Around(value = "execution(* com.coriaedu.spring.aop.springaop.business.*.*(..))")
+    @Around(value = "com.coriaedu.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void around(ProceedingJoinPoint jp) throws Throwable {
         long startTime = System.currentTimeMillis();
 
