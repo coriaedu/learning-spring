@@ -23,4 +23,8 @@ public class CommonJoinPointConfig {
     @Pointcut("within(com.coriaedu.spring.aop.springaop.data..*)")
     public void dataLayerExecutionWithWithin() {
     }
+
+    @Pointcut("@annotation(com.coriaedu.spring.aop.springaop.aspect.TrackTime)")
+    public void trackTimeAnnotation() {
+    }
 }
