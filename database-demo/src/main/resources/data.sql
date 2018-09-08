@@ -12,7 +12,7 @@ INSERT INTO PERSON
 VALUES(10001, 'Eduardo', 'San Jose', sysdate());
 INSERT INTO PERSON
     (ID, NAME, LOCATION, BIRTH_DATE)
-VALUES(10002, 'James', 'New York', sysdate());
+VALUES(10002, 'James', 'San Jose', sysdate());
 INSERT INTO PERSON
     (ID, NAME, LOCATION, BIRTH_DATE)
 VALUES(10003, 'Pedro', 'Buenos Aires', sysdate());
