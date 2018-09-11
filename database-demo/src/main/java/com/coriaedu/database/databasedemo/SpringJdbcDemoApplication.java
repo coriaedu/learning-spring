@@ -9,21 +9,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.coriaedu.database.databasedemo.entity.Person;
 import com.coriaedu.database.databasedemo.jdbc.PersonJdbcDao;
 
-@SpringBootApplication
-public class DatabaseDemoApplication implements CommandLineRunner {
+//@SpringBootApplication
+public class SpringJdbcDemoApplication implements CommandLineRunner {
 
-    private static final Logger logger = LoggerFactory.getLogger(DatabaseDemoApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(SpringJdbcDemoApplication.class);
 
     @Autowired
     PersonJdbcDao dao;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DatabaseDemoApplication.class, args);
+		SpringApplication.run(SpringJdbcDemoApplication.class, args);
 	}
 
     @Override

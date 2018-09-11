@@ -1,3 +1,4 @@
+/*
 create table person
 (
 	id integer not null,
@@ -6,6 +7,7 @@ create table person
 	birth_date timestamp,
 	primary key(id)
 );
+We can comment this as the table will be created by automatic schema update from hibernate*/
 
 INSERT INTO PERSON
     (ID, NAME, LOCATION, BIRTH_DATE)
