@@ -6,10 +6,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "person") // Not really needed as the class name already matches the table name.
+@NamedQuery(name = "find_all_persons", query = "select p from Person p")
 public class Person {
 
     @Id // Indicates this is a primary key
