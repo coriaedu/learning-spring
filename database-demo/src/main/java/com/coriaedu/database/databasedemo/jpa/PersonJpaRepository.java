@@ -30,4 +30,10 @@ public class PersonJpaRepository {
     public Person insert(Person person) {
         return update(person);
     }
+
+    public Person deleteById(int id) {
+        Person person = findById(id);
+        entityManager.remove(person);
+        return person;
+    }
 }
