@@ -1,5 +1,9 @@
 package com.coriaedu.database.databasedemo;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +11,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.coriaedu.database.databasedemo.entity.Person;
 import com.coriaedu.database.databasedemo.jpa.PersonJpaRepository;
 
 @SpringBootApplication
@@ -31,12 +36,12 @@ public class JpaDemoApplication implements CommandLineRunner {
         //        logger.info("User from San Jose -> {}", repository.findByLocation("San Jose"));
         //
         //        logger.info("Deleting id 10002 -> Number of Rows Deleted: {}", repository.deleteById(10002));
-        //
-        //        logger.info("Inserting id 1004 -> Number of Rows Inserted: {}",
-        //                repository.insert(new Person(10004, "Scott Summers", "Alaska", new Date())));
-        //
-        //        logger.info("Updating id 1001 -> Number of Rows Updated: {}",
-        //                repository.update(new Person(10001, "Eduardo", "San Jose",
-        //                        new GregorianCalendar(1976, Calendar.FEBRUARY, 13).getTime())));
+
+        logger.info("Inserting new Person -> Number of Rows Inserted: {}",
+                repository.insert(new Person("Scott Summers", "Alaska", new Date())));
+
+        logger.info("Updating id 10001 -> Number of Rows Updated: {}",
+                repository.update(new Person(10001, "Eduardo", "San Jose",
+                        new GregorianCalendar(1976, Calendar.FEBRUARY, 13).getTime())));
     }
 }
