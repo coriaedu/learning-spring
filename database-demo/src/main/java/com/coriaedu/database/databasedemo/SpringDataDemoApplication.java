@@ -9,20 +9,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.coriaedu.database.databasedemo.entity.Person;
-import com.coriaedu.database.databasedemo.jpa.PersonJpaRepository;
+import com.coriaedu.database.databasedemo.springdata.PersonSpringDataRepository;
 
-//@SpringBootApplication
-public class JpaDemoApplication implements CommandLineRunner {
+@SpringBootApplication
+public class SpringDataDemoApplication implements CommandLineRunner {
 
-    private static final Logger logger = LoggerFactory.getLogger(JpaDemoApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(SpringDataDemoApplication.class);
 
     @Autowired
-    PersonJpaRepository repository;
+    PersonSpringDataRepository repository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaDemoApplication.class, args);
+		SpringApplication.run(SpringDataDemoApplication.class, args);
 	}
 
     @Override
@@ -32,13 +33,14 @@ public class JpaDemoApplication implements CommandLineRunner {
 
         logger.info("All users -> {}", repository.findAll());
 
-        logger.info("Deleting id 10002 -> Rows Deleted: {}", repository.deleteById(10002));
+        logger.info("Deleting id 10002");
+        repository.deleteById(10002);
 
         logger.info("Inserting new Person -> Rows Inserted: {}",
-                repository.insert(new Person("Scott Summers", "Alaska", new Date())));
+                repository.save(new Person("Scott Summers", "Alaska", new Date())));
 
         logger.info("Updating id 10001 -> Rows Updated: {}",
-                repository.update(new Person(10001, "Eduardo", "San Jose",
+                repository.save(new Person(10001, "Eduardo", "San Jose",
                         new GregorianCalendar(1976, Calendar.FEBRUARY, 13).getTime())));
 
         logger.info("All users -> {}", repository.findAll());
