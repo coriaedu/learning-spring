@@ -7,6 +7,6 @@
 <title>Title from JSP</title>
 </head>
 <body>
-My first JSP
+My first JSP where name is ${name}
 </body>
 </html>
