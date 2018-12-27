@@ -7,6 +7,6 @@
 <title>Title from JSP</title>
 </head>
 <body>
-My first JSP where name is ${name}
+My first JSP where name is ${name} and my password is ${password}
 </body>
 </html>
