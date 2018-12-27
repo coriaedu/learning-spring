@@ -42,8 +42,15 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 
-        request.setAttribute("name", request.getParameter("name"));
-        request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+        UserValidationService service = new UserValidationService();
+
+        if (service.isUserValid(request.getParameter("name"), request.getParameter("password"))) {
+            request.setAttribute("name", request.getParameter("name"));
+            request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+        } else {
+            request.setAttribute("errorMessage", "Invalid Credentials!");
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+        }
     }
 
 }
