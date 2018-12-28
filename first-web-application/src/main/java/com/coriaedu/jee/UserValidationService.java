@@ -1,4 +1,4 @@
-package webapp;
+package com.coriaedu.jee;
 
 public class UserValidationService {
 
