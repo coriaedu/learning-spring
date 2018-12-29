@@ -7,9 +7,9 @@
 <title>Title from JSP</title>
 </head>
 <body>
-<form action="/spring-mvc/login" method="post">
+<form action="/login" method="post">
 <p><font color='red'>${errorMessage}</font></p>
-Name <input type="text" name="name"/> Password <input type="password" name="password"/> <input type="submit" value="Login"/>
+Name <input type="text" name="name" value="${name}"/> Password <input type="password" name="password" value="${password}"/> <input type="submit" value="Login"/>
 </form>
 </body>
 </html>

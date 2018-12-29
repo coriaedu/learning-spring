@@ -1,4 +1,4 @@
-package com.coriaedu.jee;
+package com.coriaedu.login;
 
 public class UserValidationService {
 
